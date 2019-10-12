@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'model/user.dart';
 
-class Home extends StatefulWidget {
+class Home extends 
+StatefulWidget 
+{
   final User user;
   Home({this.user});
   @override
