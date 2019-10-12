@@ -20,18 +20,16 @@ class App extends StatelessWidget {
               height: 400.0,
               child: Text(
                 "This app is a tutorial for learning the navigation concepts for the beginners in Flutter. \n \nHappy learning!",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0,color: Colors.blue),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                    color: Colors.blue),
               ),
             ),
             RaisedButton(
               child: Text("Move to Auth page"),
               onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute<void>(
-                    builder: (context) => Auth(),
-                  ),
-                );
+                Navigator.of(context).pushReplacementNamed('/auth');
               },
             ),
           ],

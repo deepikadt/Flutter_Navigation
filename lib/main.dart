@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'auth_page.dart';
+import 'signup.dart';
 import 'app.dart';
+import 'home.dart';
+import 'login.dart';
 
 void main() => runApp(MainPage());
 
@@ -12,7 +16,14 @@ class MainPage extends StatelessWidget {
         primarySwatch: Colors.blue,
         accentColor: Colors.orangeAccent,
       ),
-     home: App(),
+      initialRoute: '/',
+      routes: <String, WidgetBuilder>{
+        '/': (BuildContext context) => App(),
+        '/login': (BuildContext context) => Login(),
+        '/signup': (BuildContext context) => Signup(),
+        '/home': (BuildContext context) => Home(),
+        '/auth':(BuildContext context)=>Auth(),
+      },
     );
   }
 }
