@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_navigation/utils/strings_constants.dart';
 
 class App extends StatelessWidget {
   @override
@@ -27,7 +28,7 @@ class App extends StatelessWidget {
             RaisedButton(
               child: Text("Move to Auth page"),
               onPressed: () {
-                Navigator.of(context).pushReplacementNamed('/auth');
+                Navigator.of(context).pushReplacementNamed(AppStringConst.auth);
               },
             ),
           ],

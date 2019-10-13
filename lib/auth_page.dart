@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_navigation/signup.dart';
+import 'package:flutter_navigation/utils/strings_constants.dart';
 
-import 'login.dart';
 
 class Auth extends StatelessWidget {
   @override
@@ -20,7 +19,7 @@ class Auth extends StatelessWidget {
               child: Text("Move to signup Page"),
               onPressed: () {
                 Navigator.of(context).pushNamed(
-                  '/signup'
+                  AppStringConst.signup
                 );
               },
             ),
@@ -28,7 +27,7 @@ class Auth extends StatelessWidget {
               child: Text("Move to Login Page"),
               onPressed: () {
                 Navigator.of(context).pushNamed(
-                  '/login'
+                 AppStringConst.login
                 );
               },
             ),

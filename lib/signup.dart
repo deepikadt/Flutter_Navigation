@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_navigation/utils/strings_constants.dart';
 
-import 'home.dart';
 import 'model/user.dart';
 
 class Signup extends StatefulWidget {
@@ -9,10 +9,7 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
-  bool _isLogout = false;
-
-
-
+  var _isLogout;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,15 +26,17 @@ class _SignupState extends State<Signup> {
             RaisedButton(
               child: Text("Move to home"),
               onPressed: () async {
-                _isLogout = await Navigator.push(
-                  context,
-                  MaterialPageRoute<bool>(
-                    builder: (context) => Home(user: User(firstname: "deepika",lastname: "tripathi")),
-                  ),
-                );
+                _isLogout = await Navigator.pushNamed(
+                    context, AppStringConst.home,
+                    arguments:
+                        User(firstname: "DEEPIKA", lastname: "TRIPATHI"));
               },
             ),
-            _isLogout ? Center(child:Text("You are logged out") ,): Container(),
+            _isLogout != null && _isLogout == true
+                ? Center(
+                    child: Text("You are logged out"),
+                  )
+                : Container(),
           ],
         ),
       ),
