@@ -15,8 +15,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-
-    return WillPopScope(
+      return WillPopScope(
       onWillPop: () => Future.value(false),
       child: Scaffold(
         appBar: AppBar(
@@ -54,11 +53,14 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-    );
+     );
 
 
-    //   return WillPopScope(
-    //   onWillPop: () => Future.value(false),
+      // return WillPopScope(
+    //   onWillPop: () async {
+    //   Navigator.of(context).pop(true);
+    //   return false;
+    // },
     //   child: Scaffold(
     //     appBar: AppBar(
     //       leading: Container(),
@@ -96,5 +98,6 @@ class _HomeState extends State<Home> {
     //     ),
     //   ),
     // );
+
   }
 }
