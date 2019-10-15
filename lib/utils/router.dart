@@ -17,7 +17,24 @@ class Router {
       case AppStringConst.auth:
         return MaterialPageRoute(builder: (_) => Auth());
       case AppStringConst.login:
-        return MaterialPageRoute(builder: (_) => Login());
+        return PageRouteBuilder(
+          opaque: true,
+          transitionDuration: const Duration(milliseconds: 1000),
+          pageBuilder: (BuildContext context, _, __) {
+            return Login();
+          },
+          transitionsBuilder:
+              (_, Animation<double> animation, __, Widget child) {
+            return 
+            FadeTransition(
+              opacity: animation,
+              child: 
+              RotationTransition(
+                turns: Tween<double>(begin: 0.0, end: 1.0).animate(animation),
+                child: child,
+              ),
+            );
+          });
       case AppStringConst.signup:
         return MaterialPageRoute(builder: (_) => Signup());
       case AppStringConst.home:

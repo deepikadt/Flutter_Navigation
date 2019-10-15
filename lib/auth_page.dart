@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_navigation/utils/strings_constants.dart';
 
-
 class Auth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
