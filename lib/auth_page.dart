@@ -19,6 +19,8 @@ class Auth extends StatelessWidget {
             RaisedButton(
               child: Text("Move to Screen1"),
               onPressed: () {
+
+                //Moving to Screen1 . After moving the stack have Auth screen and then Screen1 on top of that.
                 Navigator.push(
                   context,
                   MaterialPageRoute<void>(
@@ -57,6 +59,7 @@ class _Screen1State extends State<Screen1> {
             RaisedButton(
               child: Text("Move to home"),
               onPressed: () async {
+                //moving to the Home screen and also taking data using model class User. Also this screen will get data when we will come back to this screen from home.
                 _isBack = await Navigator.push(
                   context,
                   MaterialPageRoute<bool>(

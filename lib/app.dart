@@ -26,12 +26,15 @@ class App extends StatelessWidget {
             RaisedButton(
               child: Text("Move to Auth page"),
               onPressed: () {
+
+                //using this we mmove to next screen and this screen will removed from the stack.
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute<void>(
                     builder: (context) => Auth(),
                   ),
                 );
+                
               },
             ),
           ],
